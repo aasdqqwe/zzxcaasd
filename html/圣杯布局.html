@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+        <meta charset="UTF-8">
+        <style>
+            body{
+                min-width: 600px;
+            }
+            header{
+                background-color:red;
+                height:20px;
+            }
+            main{
+                padding:0 200px;
+            }
+            .center{
+                background-color:coral;
+                height:400px; 
+                width: 100%;
+                float: left;
+            }
+          .left{
+                background-color:cadetblue;
+                height:400px;
+                width:200px;
+                float:left;
+                margin-left:-100%;
+                position:relative;
+                right:200px;
+                
+            }
+            .right{
+                background-color: darkseagreen;
+                height:400px;
+                width:200px;
+                float:left;
+                margin-right: -300px;
+                /*margin-right取值-300和-200呈现效果一样，只是在检查时能发现略有不同，为什么*/
+                /*在文档流中，元素排版布局的过程中，元素依照从左到右，从上到下自动遵守这种流式排列   
+                ////元素从左到右从上到下排列，但是从流向来说，因该是从右向左，从下往上，在有空间的前提下，尽可能的向左向上流动
+                后面流向前面；
+                /////
+                正常情况下块级元素占据一行，从上到下一行一行排列
+                行内元素 亦然，从左到右，从上到下（margin负值.html）
+               且元素的margin-left与上一个元素的margin-right对齐，margin-top与上一行元素的margin-bottom对齐（由于margin塌陷，并不会如此，但大概的思想相同）
+               若设置浮动元素，float：left,排列方式与文档流大概类似 从左到右排列，主要看元素的margin-left与谁对齐；
+               float：right 则是从右到左，主要看margin-right与谁对齐
+               margin值取负时，边界内收，与取正值时相反，需注意
+               元素总宽度=内容宽度(默认宽度为内容宽度)+padding+border+margin
+               //在文档流中最终边界是由margin决定的//
+               margin的值影响元素的位置，但不会影响元素的表现样式（宽高）《具体总结还是找一找，反正自己不知道该如何总结》
+                */
+            }
+            footer{
+                background-color:red;
+                height:20px;
+                clear:both;
+            }
+               
+            /*与双飞燕布局相比，该布局在left中有一个position，在此情况下，必须为footer清除浮动，这是为什么*/
+            /*脱离了文档流*/
+        </style>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <div class="center"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

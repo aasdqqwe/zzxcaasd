@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        body{
+            height:5000px;
+        }
+        /*粘滞定位 手机通讯录字母分区*/
+        div.top1
+        {
+            top:0;
+            position:sticky;
+            background-color: rgb(9, 129, 25);
+        }
+        /* top:0不可缺*/
+        /*并不是top0不可缺，而是要设置当该元素处于何处时，会被粘滞，在top2中，当该元素处于距离上方10px处会粘滞*/
+        /*多个粘滞是会相互覆盖，当然可以通过z-index设置覆盖顺序*/
+        /*当将top更改为bottom时，页面上滑，粘滞区域会随之上滑，原因？？？*/
+        div.top2
+        {
+            top: 10px;
+            position:sticky;
+            background-color: rgb(187, 19, 27);
+        }
+        img.one{
+            position:relative;
+            top: 20px;
+            left:200px;
+        }
+        div.first{
+            position:absolute;
+            right: 20px;
+            top:20px;
+            /*绝对定位需要 相对static定位以外的第一个父元素进行定位*/
+        }
+        div img.second{
+            position:absolute;
+            left:50px;
+            bottom:-10px;
+         
+        }
+        div.absoulte1 {
+            position:relative;
+            border:1px dotted blue;          
+            height: 600px;
+            /*若不为div设置宽高，在该例中，div的高度会自适应文本内容
+            在div中图片定位设置为absoulte,图片的大小不影响div*/
+            /*浮动导致的父元素塌陷， position设置为absoulte ,触发BFC特性*/
+        }
+        img.three{
+            position: absolute;
+            right:20px;
+            bottom: 10px;
+        }
+        img.four{
+            position: fixed;
+            left:20px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top1">粘滞定位A</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, maiores repudiandae sunt molestias, cupiditate adipisci expedita voluptates optio earum consequuntur provident quam inventore voluptas. Dolorem quos laudantium ullam ea tempora?</p>
+    <p>Ipsa provident eius voluptate amet, excepturi eum omnis dolore, incidunt ea assumenda molestiae aspernatur aut rem nulla alias quod quis, asperiores reprehenderit qui quisquam commodi dolorem quia ducimus. Sapiente, veritatis.</p>
+    <p>Ratione commodi quia minima architecto eius, quod aliquid, et laboriosam provident tempore explicabo corporis accusantium! Sapiente asperiores quia sequi? Molestiae et quidem voluptatum eum facere ipsam voluptas, reiciendis dolore repellat.</p>
+    <div class="top2"><a href="baidu.com">粘滞定位B</a></div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At temporibus rerum necessitatibus animi dolorum fugit debitis itaque ipsum deleniti, magnam repellendus reiciendis dolores accusamus recusandae dolorem sint quaerat, odio omnis!</p>
+    <p>Ab consequatur, veritatis obcaecati quam itaque enim fuga quasi laudantium id expedita ipsum vitae repudiandae ducimus non accusantium magni aut sapiente, ipsa velit aspernatur, eum recusandae deleniti nobis doloribus? Ratione.</p>
+    <p>Esse voluptatibus porro rerum. Veniam, eligendi blanditiis expedita voluptas ex asperiores illum error eius dicta iure porro quis temporibus ea laborum similique vero animi quo? Ea odio ut sapiente numquam?</p>
+    <div class="top1">粘滞定位c</div>
+    <img class="one" src="/img/1.jpg" alt="这是什么">
+    <div ><img class="first" src="/img/2.jpg" alt="在哪儿"></div>
+    <br>
+    <div class="absoulte1">
+        <img class="second"src="/img/3.jpg" alt="这是什么">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, excepturi sint nisi et ipsum qui, autem voluptatibus, iste nobis quae consequuntur recusandae optio. Perferendis, ratione? Officiis nam provident repudiandae voluptates.</p>
+    </div>
+    <div><img class="three"src="/img/4.jpg" alt="这是什么"></div>
+    <div><img class="four"src="/img/5.jpg" alt="这是什么"></div>
+</body>
+</html>

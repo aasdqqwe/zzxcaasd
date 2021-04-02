@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index和sticky实现富有层次的滚动交互</title>
+    <style>
+        /*div不能通过%设置高度吗*/
+        div.first{
+            position: sticky;
+            text-align: center;
+            background-color: antiquewhite;
+            height: 20px;
+        }
+        div.second{  
+            text-align: center;
+            background-color: blue;
+            height:1000px;
+        }
+        div.third{
+            position: sticky;
+            text-align: center;
+            background-color: burlywood;
+            height:50px;
+            z-index: -1;
+            bottom:20%;
+            /*该元素一直粘滞在距离下边界20%处，但由于z-index为-1，所以被覆盖，当上方两元素划过间隙显示该元素*/
+            /*为何该元素出现后会随页面向上滚动，而不是像five一样固定，或者继续被覆盖*/
+            
+        }
+        div.four{
+            background-color: blueviolet;
+            height: 700px;
+        }
+        div.five{
+            position: sticky;
+            text-align: center;
+            background-color: rgb(190, 221, 14);
+            height:20px;
+            bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">first</div>
+    <div class="second">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint laboriosam adipisci dolorem voluptates repellat dignissimos, veritatis numquam veniam officiis, commodi laudantium ipsam at saepe quod odio hic eligendi modi maiores!</div>
+    <div class="third">third</div>
+    <br><br>
+    <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptates! Nam magnam tempora, soluta ipsum accusantium quo eius, reprehenderit cum mollitia et impedit eligendi quod fugit eveniet unde aperiam non?</div>
+    <div class="five">five</div>
+</body>
+</html>

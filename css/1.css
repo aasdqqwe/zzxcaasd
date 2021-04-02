@@ -1,0 +1,10 @@
+
+:default{
+    height: 10px;
+}
+:checked{
+height: 20px;
+}
+span.1{
+    background:green;
+}

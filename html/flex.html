@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: flex-start;
+            align-content:flex-end;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color:burlywood;
+            width: 440px;
+            height: 700px;
+          
+        }
+        .container>div{
+            background-color: brown;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container>div:first-child{
+            order:2;
+        }
+        .container>div:nth-child(2){
+            order:1;
+        }
+        .container>div:nth-last-of-type(2)
+        {
+            order:-2;
+        }
+        .container>div:last-of-type{
+            order:-1;
+        }
+        
+         .go{
+            display: flex;      
+            background-color:burlywood;
+            align-items: stretch;
+            flex-direction: column;
+            width: 100px;
+         }
+         .go>div{
+            background-color: brown;
+            margin: 20px;
+            text-align: center;
+            width: 75px;
+            font-size: medium;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8<br>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        
+    </div>
+    <br><br>
+    <div class="go">
+        <div class="one" style="flex-grow: 1;">1</div>
+        <div class="two "style="flex-grow: 1;">2</div>
+        <div class="three"style="flex-grow: 8;">3</div>
+    </div>
+</body>
+</html>

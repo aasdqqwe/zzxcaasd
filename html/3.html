@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input#2:default
+        {
+            font-size: large;
+        }
+        input#2:checked
+        {
+           font-size: smaller;
+        }
+        
+        input:valid{
+            border: 2px blue solid ;
+        }
+        input:invalid{
+            border: 2px green solid ;
+        }
+       input:out-of-range{
+            border: 2px hotpink solid;
+        }
+        input:in-range{
+            border:2px red solid ;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="range" name="text" min="1" max="100" id="1" value="9">
+        <input type="number" min="0"max="100" value="30">
+        <button type="submit">提交</button>
+        <select id="2">
+            <option value="早上好"> morning</option>
+            <option value="中午好">noon</option>
+            <option value="晚上好">dinner</option>
+            <option value="午夜梦回">when</option>
+            <option value="凌晨">hello</option>
+        </select>
+    </form>
+</body>
+</html>

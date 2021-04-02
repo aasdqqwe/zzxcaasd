@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）</title>
+    <style>
+         p:only-of-type
+        {
+            color:rgb(224, 16, 207);
+        }
+        span:only-of-type
+        {
+            color:aqua;
+        }
+        html:only-of-type
+        {
+            color:rgb(52, 236, 15);
+        }
+        :only-of-type
+        {
+            color:brown;
+        }
+/*
+        p:only-child
+        {
+            color:green;
+        }
+        span:only-child
+        {
+            color:red;
+        }
+        html:only-child
+        {
+            color:yellow;
+        }
+        <!--在:onlychild中是否把html元素识别为唯一一个子元素：-->
+        :only-child
+        {
+            color: blue;
+        }*/
+        <!--在body元素中有多个子元素，所以各个样式不匹配，
+        在div3中有唯一一个子元素：p元素所以该元素样式匹配为绿色-->
+    </style>
+</head>
+<body>
+   <div style="border:1px solid;width: 222px">
+       <span>div1 中span</span>
+       <p>div1 中唯一一个段落。</p>
+   </div><br>
+   <div style="border:1px solid;width: 222px">
+       <p>div2 中唯一一个段落。</p>
+       <p>div2中的另一个段落</p>
+   </div>
+   <br>
+   <div style="border:1px solid;width: 222px">
+    <p>div3 中唯一一个段落。</p>
+    </div>
+    <p style="border:1px solid;width: 222px">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Iste voluptatibus nulla quam omnis odit nemo optio doloremque!
+          Culpa iusto beatae molestiae libero earum! 
+        In veritatis animi aliquid, alias adipisci amet?</p>
+</body>
+</html>
